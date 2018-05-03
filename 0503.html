@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>Music</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/docute.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/theme-github.css" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48084758-8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-48084758-8');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+  <style>
+    body {
+      text-rendering: auto;
+    }
+    #evanyou-canvas {
+      z-index: -1 !important;
+    }
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px 0;
+    }
+    .sidebar-toggle {
+      z-index: 90;
+    }
+  </style>
+</head>
+<body>
+  <!-- don't remove this part start -->
+  <div id="app">
+<div id="aplayer"></div>
+     
+  </div>
+    
+    <script>
+     const ap = new APlayer({
+         
+    container: document.getElementById('aplayer'),
+    autoplay:true,
+    
+    audio: [{
+        name: '2018绝望的蚂蚁',
+        artist: '群星',
+        url: 'http://audio.xmcdn.com/group38/M08/AF/4E/wKgJolqM1IrTOaarACVBxzCr8Kw610.m4a',
+        cover: 'http://my.zp68.com/filestores/2017/10/25/271f21d33d53198257c6496d5ebd13bf.gif'
+        
+    }]
+});
+    
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/docute/plugins/docsearch.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/docute/dist/docute.js"></script>
+  
+  <!-- livereload script placeholder -->
+  <!-- don't remove this part end -->
+</body>
+</html>
