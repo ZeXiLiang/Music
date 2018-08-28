@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0022)http://blog.csdn.net/electroniXtar/ -->   
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>Music</title>
+    
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    
+    <script src="http://jquery.thewikies.com/swfobject/jquery.swfobject.1-1-1.min.js"></script>
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/docute.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/theme-github.css" />
+    <script src="http://js.kuwo.cn/yinyue/webmv/swfobject.js"></script>
+    
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48084758-8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-48084758-8');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+     <script>
+$(document).ready(
+	function() {
+		$('#myFlash').flash(
+        
+        {
+            
+            swf:'http://image.hnol.net/c/swf/2018-03/04/13/201803041334037671-4698298.swf',
+           width:900,height:550
+        }
+        
+        );
+        
+	}
+);
+</script>
+  <style>
+    body {
+      text-rendering: auto;
+    }
+    #evanyou-canvas {
+      z-index: -1 !important;
+    }
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px 0;
+    }
+    .sidebar-toggle {
+      z-index: 90;
+    }
+  </style>
+</head>
+<body>
+  <!-- don't remove this part start -->
+  <div id="app">
+<div id="aplayer"></div>
+     
+  </div>
+
+
+    
+    
+    <script>
+     const ap = new APlayer({
+         
+    container: document.getElementById('aplayer'),
+    autoplay:true,
+    
+    audio: [{
+        name: ' 孟婆的桥 全中文 ',
+        artist: '08/28',
+        url: 'http://audio.xmcdn.com/group46/M02/D0/43/wKgKllttZaSgxkiwAje0vHSD2QE465.m4a',
+        cover: 'http://wp.yunxiu520.com/userfiles/01/qianming.gif'
+        
+    }]
+});
+    
+    </script>
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/docute/plugins/docsearch.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/docute/dist/docute.js"></script>
+  
+  <!-- livereload script placeholder -->
+  <!-- don't remove this part end -->
+</body>
+</html>
