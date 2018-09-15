@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>Music</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/docute.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/theme-github.css" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48084758-8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-48084758-8');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+  <style>
+    body {
+      text-rendering: auto;
+    }
+    #evanyou-canvas {
+      z-index: -1 !important;
+    }
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px 0;
+    }
+    .sidebar-toggle {
+      z-index: 90;
+    }
+      .aplayer-body{
+          background: #484848;
+      }
+      #app{
+          background: #2b2d2c;
+      }
+    .aplayer-title {
+          font-size: 16px!important;
+          color: #fff;
+          font-family: "微软雅黑 Light", "微软雅黑";
+
+      }
+      .aplayer-author {
+          color: #fff!important;
+           font-size: 0px!important;
+      }
+      .aplayer-played {
+        background: #CC3352!important;
+      }
+      .aplayer-loaded {
+          background:  #e8a94b!important;
+      }
+      .aplayer-thumb{
+          background: #CA48EB!important;
+      }
+      .aplayer-time-inner {
+          color: #CA48EB;
+      }
+      .aplayer-ptime {
+          font-weight: bold;
+  color: #CC3352;
+          
+      }
+      .aplayer-dtime {
+          color: #e8a94b;
+}
+  </style>
+</head>
+<body>
+  <!-- don't remove this part start -->
+  <div id="app">
+<div id="aplayer"></div>
+     
+  </div>
+    
+    <script>
+     const ap = new APlayer({
+         
+    container: document.getElementById('aplayer'),
+    autoplay:true,
+    
+    audio: [{
+        name: ' 辽阔草原 放飞心灵 ',
+        artist: ' ',
+        url: 'http://pc64-14.jyw8.com:8421/up12-2173118737/2015%E5%85%A8%E5%A5%B3%E5%A3%B0%E8%8D%89%E5%8E%9F%E6%85%A2%E6%91%87%E3%80%8A%E7%81%AB%E7%81%AB%E7%9A%84%E6%83%85%E9%83%8E%E3%80%8B%E8%BD%A6%E8%BD%BD%E5%A4%A7%E7%A2%9F-%E9%85%B7%E9%9F%B3%E9%A2%86%E5%9F%9F-Dj%E8%B4%9D%E5%A5%87miX%5B%E7%8B%AC%E5%AE%B6%5D.mp3',
+        cover: 'http://wp.yunxiu520.com/userfiles/01/qianming.gif'
+        
+    }]
+});
+    
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/docute/plugins/docsearch.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/docute/dist/docute.js"></script>
+  
+  <!-- livereload script placeholder -->
+  <!-- don't remove this part end -->
+</body>
+</html>
