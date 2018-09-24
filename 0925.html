@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>Music</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/docute.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/theme-github.css" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48084758-8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-48084758-8');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+  <style>
+    
+      html{
+          background: #2b2d2c;
+      }
+    body {
+      text-rendering: auto;
+    }
+      a {
+          color: #000;
+      }
+      li,p,div{
+          display: block;
+      }
+    #evanyou-canvas {
+      z-index: -1 !important;
+    }
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px 0;
+    }
+    .sidebar-toggle {
+      z-index: 90;
+    }
+      .aplayer-body{
+          background: #484848;
+      }
+      #app{
+          background: #2b2d2c;
+      }
+    .aplayer-title {
+         font-family: "微软雅黑 Light", "微软雅黑";
+          font-size: 16px!important;
+          color: #fff;
+         
+
+      }
+      .aplayer-author {
+          color: #fff!important;
+           font-size: 0px!important;
+      }
+      .aplayer-played {
+        background: #CC3352!important;
+      }
+      .aplayer-loaded {
+          background:  #e8a94b!important;
+      }
+      .aplayer-thumb{
+          background: #CA48EB!important;
+      }
+      .aplayer-time-inner {
+          color: #CA48EB;
+      }
+      .aplayer-ptime {
+          font-weight: bold;
+  color: #CC3352;
+          
+      }
+      .aplayer-dtime {
+          color: #e8a94b;
+}
+      .aplayer-list ol li {
+          background: #353535!important;
+          border-top: 1px solid #2b2d2c!important;
+      }
+     
+      .aplayer-list-title,aplayer-list-index {
+          font-family: "微软雅黑 Light", "微软雅黑";
+          font-size: 14px!important;
+           color: #fff!important;
+           
+          
+
+      }
+    
+      .aplayer-info {
+          border-bottom: 1px solid #484848!important;
+      }
+      .aplayer-list-cur {
+          background-color: #CC3352!important;
+      }
+      #myContextMenu {
+        position: absolute;
+        list-style:none;
+        font-family: "微软雅黑 Light", "微软雅黑";
+        font-size: 12px;
+        padding: 3px 0 3px 0;
+        overflow: hidden;
+        max-width: 280px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        border: 1px solid #ccc;
+         background: #f9f9fa;
+      }
+        ul,li,body {
+          margin: 0;
+          padding: 0;
+          border: 0;
+      }
+      li {
+          position: relative;
+          padding: 0 40px 0 26px;
+          height: 24px;
+          line-height: 24px;
+          line-height: 24px\9;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        
+      }
+      #myContextMenu li {
+          background: #f9f9fa;
+      }
+      #myContextMenu li:hover,#myContextMenu li a:hover {
+          background:#1a75ff;
+          color: #f9f9fa;
+      }
+      a {
+          width: 100px;
+           text-overflow: ellipsis;
+        
+      }
+  </style>
+</head>
+<body>
+  <!-- don't remove this part start -->
+  <div id="app">
+<div id="aplayer"></div>
+     
+  </div>
+    
+    
+    <script>
+     const ap = new APlayer({
+         
+    container: document.getElementById('aplayer'),
+    autoplay:true,
+    
+    audio: [{
+        name: ' 舒适中秋 全球热播  ',
+        artist: ' ',
+        url: 'http://pc64-19.jyw8.com:8421/up02-21effe025a/%E9%A2%86%E9%9F%B3%E8%BD%A6%E8%BD%BD-%E4%B8%AD%E5%B1%B1DJ%E5%B0%8F%E5%BC%BA-%E6%8A%96%E9%9F%B3%E7%A5%9E%E6%9B%B2%E3%80%8A%E5%85%A8%E7%90%83%E7%83%AD%E6%92%AD47%E9%A6%96%E3%80%8B%E7%AC%AC42%E5%B1%8A-%E5%A8%B1%E4%B9%90%E6%9D%AF.mp3',
+        cover: 'http://wp.yunxiu520.com/userfiles/01/jinglingqian.gif'
+        
+    }
+           
+           ]
+});
+    
+    </script>
+    
+      <script type="text/javascript">
+        window.onload = function(){
+            eventHandler(document,'contextmenu',function(event){
+                event = event || window.event;
+                event.preventDefault?(event.preventDefault()):(event.returnValue = false);
+                var menu = document.getElementById('myContextMenu'),
+                pageX = event.pageX?event.pageX:(event.clientX+(document.body.scrollLeft||document.documentElement.scrollLeft)),
+                pageY = event.pageY?event.pageY:(event.clientY+(document.body.scrollTop||document.documentElement.scrollTop));
+                menu.style.left = pageX+'px';
+                menu.style.top = pageY+'px';
+                menu.style.visibility = 'visible';
+            });
+            eventHandler(document,'click',function(event){
+                document.getElementById('myContextMenu').style.visibility = 'hidden';
+            })
+        }
+        function eventHandler(dom,type,fn){
+            if(typeof dom.addEventListener != 'undefined'){
+                dom.addEventListener(type,fn,false);
+            }else if(typeof dom.attachEvent != 'undefined'){
+                dom.attachEvent('on'+type,fn);
+            }else{
+                dom['on'+type] = fn;
+            }
+        }
+    </script>
+    <ul id='myContextMenu'>
+        <li><a href="http://image.hnol.net/c/swf/2018-09/22/03/201809220305414831-4698298.swf">月舞芸袖音画论坛欢迎您的光临</a></li>
+        <li><a href="http://image.hnol.net/c/swf/2018-09/22/03/201809220305414831-4698298.swf">雅兰阁音画论坛欢迎您的光临</a></li>
+        <li>音乐快递板块出品</li>
+        <li><a href="http://image.hnol.net/c/swf/2018-09/22/03/201809220305414831-4698298.swf">点击切换flash播放器</a></li>
+   
+    </ul>
+    <div>asdfasf</div>
+    <div>asdfasf</div>
+  <script src="https://cdn.jsdelivr.net/npm/docute/plugins/docsearch.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/docute/dist/docute.js"></script>
+  
+  <!-- livereload script placeholder -->
+  <!-- don't remove this part end -->
+</body>
+</html>
