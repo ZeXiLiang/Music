@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>Music</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/docute.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/theme-github.css" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48084758-8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-48084758-8');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+  <style>
+      html{
+          background: #2b2d2c;
+      }
+    body {
+      text-rendering: auto;
+    }
+    #evanyou-canvas {
+      z-index: -1 !important;
+    }
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px 0;
+    }
+    .sidebar-toggle {
+      z-index: 90;
+    }
+      .aplayer-body{
+          background: #484848;
+      }
+      #app{
+          background: #2b2d2c;
+      }
+    .aplayer-title {
+         font-family: "微软雅黑 Light", "微软雅黑";
+          font-size: 16px!important;
+          color: #fff;
+         
+
+      }
+      .aplayer-author {
+          color: #fff!important;
+           font-size: 0px!important;
+      }
+      .aplayer-played {
+        background: #CC3352!important;
+      }
+      .aplayer-loaded {
+          background:  #e8a94b!important;
+      }
+      .aplayer-thumb{
+          background: #CA48EB!important;
+      }
+      .aplayer-time-inner {
+          color: #CA48EB;
+      }
+      .aplayer-ptime {
+          font-weight: bold;
+  color: #CC3352;
+          
+      }
+      .aplayer-dtime {
+          color: #e8a94b;
+}
+      .aplayer-list ol li {
+          background: #353535!important;
+          border-top: 1px solid #2b2d2c!important;
+      }
+     
+      .aplayer-list-title,aplayer-list-index {
+          font-family: "微软雅黑 Light", "微软雅黑";
+          font-size: 14px!important;
+           color: #fff!important;
+           
+          
+
+      }
+    
+      .aplayer-info {
+          border-bottom: 1px solid #484848!important;
+      }
+      .aplayer-list-cur {
+          background-color: #CC3352!important;
+      }
+  </style>
+</head>
+<body>
+  <!-- don't remove this part start -->
+  <div id="app">
+<div id="aplayer"></div>
+     
+  </div>
+    
+    
+    <script>
+     const ap = new APlayer({
+         
+    container: document.getElementById('aplayer'),
+    autoplay:true,
+    
+    audio: [{
+        name: ' 舒适中秋 高原气息  ',
+        artist: ' ',
+        url: 'http://pc64-19.jyw8.com:8421/up23-10a873f209/DJ%E4%BD%99%E6%84%8F-%E6%97%A0%E6%8D%9F%E9%9F%B3%E8%B4%A8%E3%80%90%E9%AB%98%E5%8E%9F%E6%B0%94%E6%81%AF%E9%9B%AA%E5%B1%B1%E7%9A%84%E7%A5%9E%E7%A7%98%E6%AD%8C%E6%89%8B%E9%A6%96%E5%BC%A0%E4%B8%93%E8%BE%91%E3%80%91%E5%80%BE%E5%8A%9B%E6%89%93%E9%80%A0.mp3',
+        cover: 'http://wp.yunxiu520.com/userfiles/01/qianming.gif'
+        
+    }
+           
+           ]
+});
+    
+    </script>
+    
+      <script type="text/javascript">
+        window.onload = function(){
+            eventHandler(document,'contextmenu',function(event){
+                event = event || window.event;
+                event.preventDefault?(event.preventDefault()):(event.returnValue = false);
+                var menu = document.getElementById('myContextMenu'),
+                pageX = event.pageX?event.pageX:(event.clientX+(document.body.scrollLeft||document.documentElement.scrollLeft)),
+                pageY = event.pageY?event.pageY:(event.clientY+(document.body.scrollTop||document.documentElement.scrollTop));
+                menu.style.left = pageX+'px';
+                menu.style.top = pageY+'px';
+                menu.style.visibility = 'visible';
+            });
+            eventHandler(document,'click',function(event){
+                document.getElementById('myContextMenu').style.visibility = 'hidden';
+            })
+        }
+        function eventHandler(dom,type,fn){
+            if(typeof dom.addEventListener != 'undefined'){
+                dom.addEventListener(type,fn,false);
+            }else if(typeof dom.attachEvent != 'undefined'){
+                dom.attachEvent('on'+type,fn);
+            }else{
+                dom['on'+type] = fn;
+            }
+        }
+    </script>
+    <ul id='myContextMenu' style="padding:0;margin:0;list-style:none;position:absolute;visibility:hidden;background-color:green;">
+        <li>hi</li>
+        <li><a href="http://image.hnol.net/c/swf/2018-09/22/03/201809220305414831-4698298.swf">hello</a></li>
+    </ul>
+    <div>asdfasf</div>
+    <div>asdfasf</div>
+  <script src="https://cdn.jsdelivr.net/npm/docute/plugins/docsearch.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/docute/dist/docute.js"></script>
+  
+  <!-- livereload script placeholder -->
+  <!-- don't remove this part end -->
+</body>
+</html>
