@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>Music</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/docute.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute/dist/theme-github.css" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48084758-8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-48084758-8');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+  <style>
+      html{
+          background: #2b2d2c;
+      }
+    body {
+      text-rendering: auto;
+    }
+    #evanyou-canvas {
+      z-index: -1 !important;
+    }
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px 0;
+    }
+    .sidebar-toggle {
+      z-index: 90;
+    }
+      .aplayer-body{
+          background: #484848;
+      }
+      #app{
+          background: #2b2d2c;
+      }
+    .aplayer-title {
+         font-family: "微软雅黑 Light", "微软雅黑";
+          font-size: 16px!important;
+          color: #fff;
+         
+      }
+      .aplayer-author {
+          color: #fff!important;
+           font-size: 0px!important;
+      }
+      .aplayer-played {
+        background: #CC3352!important;
+      }
+      .aplayer-loaded {
+          background:  #e8a94b!important;
+      }
+      .aplayer-thumb{
+          background: #CA48EB!important;
+      }
+      .aplayer-time-inner {
+          color: #CA48EB;
+      }
+      .aplayer-ptime {
+          font-weight: bold;
+  color: #CC3352;
+          
+      }
+      .aplayer-dtime {
+          color: #e8a94b;
+}
+      .aplayer-list ol li {
+          background: #353535!important;
+          border-top: 1px solid #2b2d2c!important;
+      }
+     
+      .aplayer-list-title,aplayer-list-index {
+          font-family: "微软雅黑 Light", "微软雅黑";
+          font-size: 14px!important;
+           color: #fff!important;
+           
+          
+      }
+    
+      .aplayer-info {
+          border-bottom: 1px solid #484848!important;
+      }
+      .aplayer-list-cur {
+          background-color: #CC3352!important;
+      }
+  </style>
+</head>
+<body>
+  <!-- don't remove this part start -->
+  <div id="app">
+<div id="aplayer"></div>
+     
+  </div>
+    
+    
+    <script>
+     const ap = new APlayer({
+         
+    container: document.getElementById('aplayer'),
+    autoplay:true,
+    
+    audio: [{
+        name: ' 中秋双节 醉人女声  ',
+        artist: ' ',
+        url: 'http://pc64-14.jyw8.com:8421/up08-2eece17d15/%E9%A2%86%E9%9F%B3%E8%BD%A6%E8%BD%BD%E3%80%8A87%E5%88%86%E9%92%9F%E9%86%89%E4%BA%BA%E5%A5%B3%E5%A3%B0%5B%E8%AE%A9%E6%82%A8%E6%84%9F%E8%A7%89%E6%9E%81%E8%87%B43D%E7%8E%AF%E7%BB%95%5D%E5%A8%B1%E4%B9%90%E6%9D%AF%E7%89%B9%E8%BE%91%E3%80%8BDJ%E6%B2%AB%E6%B2%ABMIX.mp3',
+        cover: 'http://wp.yunxiu520.com/userfiles/01/qianming.gif'
+        
+    }
+           
+           ]
+});
+    
+    </script>
+    
+     
+  
+  <script src="https://cdn.jsdelivr.net/npm/docute/plugins/docsearch.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/docute/dist/docute.js"></script>
+  
+  <!-- livereload script placeholder -->
+  <!-- don't remove this part end -->
+</body>
+</html>
