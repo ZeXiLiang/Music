@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<!-- Website Design By: www.happyworm.com -->
+<title>Music</title>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://zexiliang.github.io/1808-15/jPlayer-2.9.1/lib/jquery.min.js"></script>
+<script type="text/javascript" src="https://zexiliang.github.io/1808-15/jPlayer-2.9.1/dist/jplayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="https://zexiliang.github.io/1808-15/jPlayer-2.9.1/dist/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1",
+		cssSelectorAncestor: "#jp_container_1",
+		
+	}, [
+		{
+			title:"夜之光中文重低音抖音热播车载&DJ烟萧儿",
+			mp3:"http://audio2.xmcdn.com/group50/M02/A9/02/wKgKnVvz4brxKcpmAdnIzajuXm0501.m4a"
+		},
+        {
+			title:"另一版 夜之光中文舞曲 4.5分钟 ",
+			mp3:"http://pc64-19.jyw8.com:8421/up20-1c539313b4/%E5%A4%9C%E4%B9%8B%E5%85%89%E2%80%94%E6%8A%96%E9%9F%B3%E7%A5%9E%E6%9B%B2%EF%BC%88dj%E9%98%BF%E9%83%8E%EF%BC%89.mp3"
+		}
+        
+	], 
+			    
+			    
+			    {
+			playlistOptions: {
+    autoPlay: true,
+    enableRemoveControls: true
+  },    
+		swfPath: "https://zexiliang.github.io/1808-15/jPlayer-2.9.1/dist/jplayer",
+		supplied: "oga, mp3",
+		wmode: "window",
+		useStateClassSkin: true,
+		autoBlur: false,
+		smoothPlayBar: true,
+		keyEnabled: true
+	});
+});
+//]]>
+</script>
+    <style>
+      #myContextMenu {
+          visibility:hidden;
+        position: absolute;
+        list-style:none;
+        font-family: "微软雅黑 Light", "微软雅黑";
+          font: 12px/1.5 "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+        font-size: 12px;
+        font-weight: bold; 
+        padding: 5px 0 5px 0;
+        overflow: hidden;
+        max-width: 280px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        border: 1px solid #ccc;
+         background: #f9f9fa;
+      }
+         
+      #myContextMenu li {
+          background: #f9f9fa;
+          padding: 3px 10px;
+      }
+        #myContextMenu li a {
+            text-decoration: none;
+            color: #000;
+        }
+      #myContextMenu li:hover,#myContextMenu li a:hover {
+          background:#1a75ff;
+          color: #f9f9fa;
+      }
+    </style>
+</head>
+<body>
+
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+	<div class="jp-type-playlist">
+        <div class="jp-playlist">
+			<ul>
+				<li>&nbsp;</li>
+			</ul>
+		</div>
+		<div class="jp-gui jp-interface">
+			<div class="jp-volume-controls">
+				<button class="jp-mute" role="button" tabindex="0">mute</button>
+				<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+				<div class="jp-volume-bar">
+					<div class="jp-volume-bar-value"></div>
+				</div>
+			</div>
+			<div class="jp-controls-holder">
+				<div class="jp-controls">
+					<button class="jp-previous" role="button" tabindex="0">previous</button>
+					<button class="jp-play" role="button" tabindex="0">play</button>
+					<button class="jp-stop" role="button" tabindex="0">stop</button>
+					<button class="jp-next" role="button" tabindex="0">next</button>
+				</div>
+				<div class="jp-progress">
+					<div class="jp-seek-bar">
+						<div class="jp-play-bar"></div>
+					</div>
+				</div>
+				<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+				<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+				<div class="jp-toggles">
+					<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+					<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="jp-no-solution">
+			<span>Update Required</span>
+			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		</div>
+        
+	</div>
+</div>
+    
+    
+    <script type="text/javascript">
+        window.onload = function(){
+            eventHandler(document,'contextmenu',function(event){
+                event = event || window.event;
+                event.preventDefault?(event.preventDefault()):(event.returnValue = false);
+                var menu = document.getElementById('myContextMenu'),
+                pageX = event.pageX?event.pageX:(event.clientX+(document.body.scrollLeft||document.documentElement.scrollLeft)),
+                pageY = event.pageY?event.pageY:(event.clientY+(document.body.scrollTop||document.documentElement.scrollTop));
+                menu.style.left = pageX+'px';
+                menu.style.top = pageY+'px';
+                menu.style.visibility = 'visible';
+            });
+            eventHandler(document,'click',function(event){
+                document.getElementById('myContextMenu').style.visibility = 'hidden';
+            })
+        }
+        function eventHandler(dom,type,fn){
+            if(typeof dom.addEventListener != 'undefined'){
+                dom.addEventListener(type,fn,false);
+            }else if(typeof dom.attachEvent != 'undefined'){
+                dom.attachEvent('on'+type,fn);
+            }else{
+                dom['on'+type] = fn;
+            }
+        }
+    </script>
+    <ul id='myContextMenu'>
+        <li><a href="http://www.yunxiu520.com/forum.php" target="_blank">月舞芸袖音画论坛欢迎您的光临</a></li>
+        <li><a href="http://www.yalangelt.com/forum.php" target="_blank">雅兰阁音画论坛欢迎您的光临</a></li>
+        <li>音乐快递板块</li>
+        <li><a href="http://image.hnol.net/c/swf/2018-11/22/00/2018112200575111-4698298.swf">点击切换flash播放器</a></li>
+   
+    </ul> 
+
+   <div class="model"> 
+ <IFRAME height=600 marginHeight=0 src="d-555.html" frameBorder=0 width=900 marginWidth=0 scrolling=no></IFRAME>   </div>
+ 
+</body>
+
+</html>
