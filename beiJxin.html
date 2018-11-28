@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang='en' class=''>
+<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_reload-2a5c7ad0fe826f66e054c6020c99c1e1c63210256b6ba07eb41d7a4cb0d0adab.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/thebabydino/pen/XXEdBJ" />
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+<style class="cp-pen-styles">body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background: #222;
+}
+
+svg {
+  align-self: center;
+  width: 1920px;
+  height: 980px;
+ 
+}
+</style></head><body>
+<svg></svg>
+<script src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
+<script >var C = .551915024494,
+NS_URI = 'http://www.w3.org/2000/svg',
+CUBIC_N = 3,
+DURATION = 120 /* animation duration */,
+N_LAYERS = 7 /* layers around midpoint */,
+N_POLY = 6 /* type of poly distribution */,
+PALETTE = [[220, 20, 60], [255, 215, 0]],
+items = [] /* morphing shapes */,
+n /* their count */,
+timeline = [],
+a /* amplitude of item jump */,
+off /* base time offset */;
+
+/* create an item morphing heart -> star */
+var createItem = function (parent, layer) {
+	var pos /* positioner */, ani /* morpher */;
+
+	pos = document.createElementNS(NS_URI, 'g');
+	ani = document.createElementNS(NS_URI, 'path');
+	ani.setAttribute('d', timeline[0].d);
+	ani.setAttribute('fill', timeline[0].rgb);
+	pos.appendChild(ani);
+	parent.appendChild(pos);
+	items.push({ 'ani': ani, 'layer': layer });
+
+	return pos;
+};
+
+/* create polygonal distribution */
+var createDistribution = function (container, bri) {
+	var bri = bri || 100,
+	α,be,lri,le,lrc,β,de,d,γ,x,y,
+	layer = N_LAYERS,frag,pos;
+
+	frag = document.createDocumentFragment();
+	α = 2 * Math.PI / N_POLY; // central angle
+	be = 2 * bri * Math.tan(.5 * α); // base edge
+
+	while (layer--) {
+		if (layer) {
+			lri = layer * bri; // layer inradius
+			le = layer * be; // layer edge
+			lrc = lri / Math.cos(.5 * α); // layer circumrad
+
+			/* take each edge */
+			for (var i = 0; i < N_POLY; i++) {
+				β = (i - .5) * α + .5 * Math.PI;
+
+				for (var j = 0; j < layer; j++) {
+					de = (.5 * layer - j) * be;
+					d = Math.hypot(lri, de);
+					γ = β + .5 * α + Math.atan(de / lri);
+
+					x = d * Math.cos(γ);
+					y = d * Math.sin(γ);
+
+					pos = createItem(frag, layer);
+					pos.setAttribute(
+					'transform',
+					'translate(' + x + ' ' + y + ')');
+
+				}
+			}
+		} else
+		createItem(frag, 0);
+	}
+
+	container.appendChild(frag);
+};
+
+var getHeartPoints = function (d) {
+	var points = [],rp = .25 * d,dv = .75 * d,
+	kp = C * rp,xo = 2 * rp,
+	kh = -rp - kp,kl = xo + kp;
+
+	points = [
+	[0, -rp],
+	[kp, kh], [xo - kp, kh], [xo, -rp],
+	[kl, kp - rp], [kl, rp - kp], [xo, rp],
+	[0, dv], [0, dv], [-xo, rp], // #3
+	[-kl, rp - kp], [-kl, kp - rp], [-xo, -rp],
+	[kp - xo, kh], [-kp, kh], [0, -rp]];
+
+
+	return points;
+};
+
+var getStarPoints = function (d) {
+	var points = [],
+	n_penta = 5,nt = 2 * n_penta,
+	α = 2 * Math.PI / n_penta,
+	β = (n_penta - 2) * Math.PI / n_penta,
+	γ = Math.PI - β,δ = .5 * α,
+	rin = d / (1 + Math.cos(δ) + Math.sin(δ) * Math.tan(γ)),
+	rout = d - rin,
+	φ,r,x,y;
+
+	for (var i = 0; i <= nt; i++) {
+		r = i % 2 ? rout : rin;
+		φ = i * δ - .5 * Math.PI;
+
+		x = r * Math.cos(φ);
+		y = r * Math.sin(φ);
+
+		points.push([x, y]);
+		if (i % 2) points.push([x, y]); // ctrl pt
+	}
+
+	return points;
+};
+
+var getTimeline = function (keypoints, duration) {
+	var tl = [],n_curves = 5,pre = ['M'],np,
+	k,k1,d,rgb,x,y;
+
+	for (var i = 0; i < n_curves; i++) {
+		for (var j = 0; j < CUBIC_N; j++) {
+			pre.push(j ? ',' : 'C');
+		}
+	}
+
+	np = pre.length;
+
+	for (var i = 0; i <= duration; i++) {
+		k = i / duration;
+		k1 = 1 - k;
+		d = '';
+		rgb = [];
+
+		for (var j = 0; j < np; j++) {
+			x = k1 * keypoints[0][j][0] + k * keypoints[1][j][0];
+			y = k1 * keypoints[0][j][1] + k * keypoints[1][j][1];
+			d += pre[j] + Math.round(x) + ' ' + Math.round(y);
+		}
+
+		for (var j = 0; j < 3; j++) {
+			rgb.push(Math.round(k1 * PALETTE[0][j] + k * PALETTE[1][j]));
+		}
+
+		tl.push({ 'd': d + 'z', 'rgb': 'rgb(' + rgb + ')' });
+	}
+
+	return tl;
+};
+
+var ani = function (t) {
+	var t_rel, d, φ, y, j, k, α;
+
+	/* go through all items */
+	for (var i = 0; i < n; i++) {
+		t_rel = (t - items[i].layer * off + DURATION) % DURATION;
+		d = 4 * t_rel / DURATION;
+		φ = d * Math.PI;
+		y = -Math.round(a * Math.sin(φ));
+
+		if (y <= 0) {
+			j = 1 - Math.cos(φ);
+			k = Math.floor(d / 2);
+			α = Math.round(j * 90) + k * 180;
+			j = ~~((k * 1 + .5 * j * Math.pow(-1, k)) * .25 * DURATION);
+
+			items[i].ani.setAttribute(
+			'transform',
+			'translate(0 ' + y + ') rotate(' + α + ')');
+
+			items[i].ani.setAttribute('d', timeline[j].d);
+			items[i].ani.setAttribute('fill', timeline[j].rgb);
+		}
+	}
+
+	requestAnimationFrame(ani.bind(this, ++t));
+};
+
+(function init() {
+	var svg, s, w, h, hdiag, bri, d;
+
+	/* get svg element, set a viewbox */
+	svg = document.querySelector('svg');
+	s = getComputedStyle(svg);
+	w = ~~s.width.split('px')[0];
+	h = ~~s.height.split('px')[0];
+	svg.setAttribute(
+	'viewBox' /* `viewbox` won't work! */,
+	[-w, -h, 2 * w, 2 * h]);
+
+
+	/* compute stuff needed to create shapes */
+	hdiag = Math.hypot(w, h); // half diagonal
+	bri = hdiag / (N_LAYERS - .5); // base inradius for distr
+	a = d = .5 * bri;
+
+	/* create timeline */
+	timeline = getTimeline(
+	[getHeartPoints(d), getStarPoints(d)],
+	.25 * DURATION);
+
+
+	/* create & position items */
+	createDistribution(svg, bri);
+	n = items.length;
+	off = Math.round(.25 * DURATION / (.5 * N_LAYERS));
+
+	/* start animation */
+	ani(0);
+})();
+//# sourceURL=pen.js
+</script>
+</body></html>
