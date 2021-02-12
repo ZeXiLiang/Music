@@ -1,5 +1,19 @@
 /*! Blue Monday Skin for jPlayer 2.9.2 ~ (c) 2009-2014 Happyworm Ltd ~ MIT License */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  * Skin for jPlayer Plugin (jQuery JavaScript Library)
  * http://www.jplayer.org
@@ -27,9 +41,10 @@
  #roll_T {
 display: inline-block;
 position: relative;
-    top: 4px;
-margin-left: 60px;
-
+   line-height: 20px;
+   height: 20px;
+   margin-left: 20px;
+   vertical-align: middle;
 z-index: 999;
 width: 120px;
 overflow: hidden;
@@ -44,7 +59,7 @@ display: inline;
 #roll_T #roll_1 ul {
 float: left;
 display: inline;
-margin-top: 4px;
+
 }
 ol, ul, li {
 list-style: none;
@@ -183,19 +198,26 @@ height: 80px; }
 /* @group CONTROLS */
 .jp-controls-holder {
 clear: both;
-width: 326px;
-height: 24px;
 
 position: relative;
+margin-bottom: 2px;
+width: 326px;
+height: 20px;
+line-height: 20px;
+text-align: left;
 overflow: hidden;
-
+}
 
 /* This negative value depends on the size of the text in jp-currentTime and jp-duration */ }
 
 .jp-interface .jp-controls {
-margin: 0;
-padding: 0;
-overflow: hidden; }
+display: inline-block;
+line-height: 24px;
+vertical-align: middle;
+width: 80px;
+background: #f60;
+overflow: hidden;
+ }
 
 .jp-audio .jp-controls {
 width: 380px;
@@ -212,58 +234,55 @@ width: 78px;
 margin-left: 200px; 
 }
 
-.jp-video .jp-type-playlist .jp-controls {
- margin-left: 0px;
-line-height: 24px;
-width: 80px;
+.jp-controls {
 
+    display: inline-block;
+    text-align: left;
+    line-height:18px;
+    height: 18px;
+    width: 80px;
+    vertical-align: middle;
 
 }
 
-.jp-video .jp-controls {
-display: inline-block;
-       margin: 0 auto;
-}
 
 .jp-controls button {
-display: block;
-float: left;
+display: inline-block;
+margin-left: 10px;
+line-height: 18px;
+vertical-align: middle;
 overflow: hidden;
 
-
+text-indent: -9999px;
 cursor: pointer; 
 }
 
 
 .jp-play {
-position: relative;
-top: -2px;
-width: 24px;
-height: 24px; 
-background: url("https://zexiliang.github.io/0428/zanting.png") center no-repeat;
-background-size: 20px 20px;
-
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -97px -169px;
+    width: 6px;
+    height: 8px;
+    position: relative;
 }
 
 .jp-play:focus {
-position: relative;
-top: -2px;
-background: url("https://zexiliang.github.io/0428/zanting.png") center no-repeat;
-background-size: 20px 20px;
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -97px -169px;
+    width: 6px;
+    height: 8px;
+    position: relative;
 
 }
 
 .jp-state-playing .jp-play {
-position: relative;
-top: -2px;
-width: 24px;
-height: 24px;
-background: url("https://zexiliang.github.io/0428/bofang.png") center no-repeat; 
+background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -114px -170px;
+    width: 6px;
+    height: 8px; 
 }
 
 .jp-state-playing .jp-play:focus {
-background: url("https://zexiliang.github.io/0428/bofang.png") center no-repeat;
-background-size: 20px 20px;
+background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -114px -170px;
+    width: 6px;
+    height: 8px;
 }
 
 .jp-stop, .jp-previous, .jp-next {
@@ -273,23 +292,35 @@ height: 24px;
 }
 
 .jp-stop {
-display: none!important;
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -136px -170px;
+    width: 6px;
+    height: 6px;
 }
 
 .jp-stop:focus {
 }
 
 .jp-previous {
-
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -78px -169px;
+    width: 7px;
+    height: 8px;
 }
 
 .jp-previous:focus {
-
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -78px -169px;
+    width: 7px;
+    height: 8px;
 }
 
 .jp-next {
+        background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -164px -168px;
+    width: 7px;
+    height: 8px;
 }
 .jp-next:focus {
+        background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -164px -168px;
+    width: 7px;
+    height: 8px;
 }
 /* @end */
 /* @group progress bar */
@@ -338,7 +369,8 @@ height: 100%; }
 
 /* The seeking class is added/removed inside jPlayer */
 .jp-seeking-bg {
-background: url("./image/jplayer.blue.monday.seeking.gif"); }
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -98px -178px;
+    height: 1px;}
 
 /* @end */
 /* @group volume controls */
@@ -349,10 +381,12 @@ display: none; }
 
 
 display: inline-block;
-position: absolute;
-    margin-left: 10px;
-line-height: 24px;
-width: 80px; 
+text-align: left;
+margin-left: 10px;
+vertical-align: middle;
+height: 18px;
+line-height: 18px;
+width: 100px; 
 
 }
 
@@ -363,12 +397,13 @@ left: 70px; }
 /*闊抽噺*/
 .jp-volume-controls button {
 display: inline-block;
-position: relative;
+text-align: left;
 
+vertical-align: middle;
 
 cursor: pointer;
 }
-
+/*
 .jp-mute,
 .jp-volume-max {
 width: 20px;
@@ -376,16 +411,15 @@ height: 20px; }
 
 .jp-volume-max {
 left: 74px; }
-
+*/
 .jp-mute {
-    top: 4px;
-width: 20px;
-height: 20px;
+    
 
 color: #fff;
 font-size: 18px;
-    
-    content: url(https://zexiliang.github.io/0428/yin-20.png); 
+background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -25px -142px;
+    width: 14px;
+    height: 12px;
 }
 
 .jp-mute::before {
@@ -393,13 +427,17 @@ font-size: 18px;
  
 
 /*content: "\F028";*/
-    content: url(https://zexiliang.github.io/0428/yin-20.png);
+  background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -52px -142px;
+    width: 7px;
+    height: 12px;
     
 }
 .jp-state-muted .jp-mute:focus::before {
    /* background: url("./yin-2.png") center no-repeat; */
 /*content: "\F026";*/
-    content: url("https://zexiliang.github.io/0428/jingyin-20.png");
+        background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -52px -142px;
+    width: 7px;
+    height: 12px;
 }
 
 
@@ -407,7 +445,7 @@ font-size: 18px;
 
 
 
-
+/*
 .jp-volume-max {
 display: none!important;
 background: url("./image/jplayer.blue.monday.jpg") 0 -186px no-repeat; }
@@ -415,24 +453,27 @@ background: url("./image/jplayer.blue.monday.jpg") 0 -186px no-repeat; }
 .jp-volume-max:focus {
 display: none!important;
 background: url("./image/jplayer.blue.monday.jpg") -19px -186px no-repeat; }
-
+*/
 .jp-volume-bar {
-position: relative;
 display: inline-block;
-line-height: 24px;
-overflow: hidden;
-background-color: #595959;
+text-align: left;
+vertical-align: middle;
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -98px -178px;
+    height: 1px;
 width: 54px;
-border-radius: 2.4px;
-left: 5px;
-margin-bottom: 6px;
+cursor: pointer; 
+overflow: hidden;
 
-cursor: pointer; }
+}
 
 .jp-volume-bar-value {
-background-color: #e8e8e8;
+  
+
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -98px -181px;
+    height: 1px;   
+
 width: 0px;
-height: 2.4px;
+
 }
 
 /* @end */
@@ -502,12 +543,19 @@ cursor: default; }
 
 .jp-details,
 .jp-playlist {
-    opacity: 0;
+    opacity: 1;
 width: 100%;
+
+position: absolute;
+top: 20px;
 
 
 }
 .jp-type-playlist {
+    position: absolute;
+    top: 200px;
+
+    text-align: left;
     background: #262626;
 }
 .jp-type-single .jp-details,
@@ -602,8 +650,8 @@ background-color: transparent;
 /* Makes IE9 work with the active area over the whole video area. IE6/7/8 only have the button as active area. */ }
 
 .jp-video-270p .jp-video-play {
-margin-top: -270px;
-height: 270px; }
+
+}
 
 .jp-video-360p .jp-video-play {
 margin-top: -360px;
@@ -611,12 +659,12 @@ height: 360px; }
 
 .jp-video-full .jp-video-play {
 height: 100%; }
-
+/*
 .jp-video-play-icon {
 position: relative;
-display: block;
+display: inline-block;
 width: 112px;
-height: 100px;
+
 margin-left: -56px;
 margin-top: -50px;
 left: 50%;
@@ -628,14 +676,15 @@ cursor: pointer; }
 
 .jp-video-play-icon:focus {
 background: url("./image/jplayer.blue.monday.video.play.png") 0 -100px no-repeat; }
-
+*/
 .jp-jplayer audio,
 .jp-jplayer {
 width: 0px;
 height: 0px; }
 
 .jp-jplayer {
-background-color: #000000; }
+background-color: #000000;
+ }
 
 /* @group TOGGLES */
 /* The audio toggles are nested inside jp-time-holder */
@@ -653,15 +702,20 @@ margin: 0;
 position: absolute;
 left: 325px;
 top: 50px; }
-
+/**********************************************************/
 .jp-video .jp-toggles {
-position: relative;
-display: inline-block;
 
-left:10px;
-margin: 0 ;
-line-height: 24px;
-width: 120px; }
+display: inline-block;
+text-align: left;
+margin-left: 12px;
+height: 18px;
+line-height: 18px;
+vertical-align: middle;
+width: 90px; 
+
+}
+
+
 .anticon-fullscreen {
 
 z-index: 100;
@@ -670,71 +724,70 @@ z-index: 100;
     display: none;
 }
 .list {
+
 	display: inline-block;
-float: left;
-margin-top: 2px;
-	height: 24px;
-    margin-right: 5px;
-    line-height: 24px;
+margin: 0 10px;
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -181px -168px;
+    width: 13px;
+    height: 9px;
+    line-height: 18px;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
 .jp-toggles button {
 display: inline-block;
-float: left;
-width: 25px;
-height: 24px;
-    
-margin: 0 5px 0 5px;
-line-height: 100%;
+  
+  vertical-align: middle;
+line-height: 16px;
 /* need this for IE6 */
 
 cursor: pointer; }
-.jp-repeat {
-    margin-left: 10px;
-}
-.jp-full-screen {
 
-}
 
-.jp-full-screen:focus {
 
-}
-
-.jp-state-full-screen .jp-full-screen {
-
-}
-
-.jp-state-full-screen .jp-full-screen:focus {
-}
 
 .jp-repeat {
 
-background: url("https://zexiliang.github.io/0428/danxun.png") center no-repeat; 
+   background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -51px -164px;
+    width: 16px;
+    height: 16px;
 }
 
 .jp-repeat:focus {
-background: url("https://zexiliang.github.io/0428/danxun.png") center no-repeat;
+   background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -51px -164px;
+    width: 16px;
+    height: 16px;
 }
 
 .jp-state-looped .jp-repeat {
-background: url("https://zexiliang.github.io/0428/danqu-1.png") center no-repeat; }
-
+ background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -51px -164px;
+    width: 16px;
+    height: 16px;}
 .jp-state-looped .jp-repeat:focus {
-background: url("https://zexiliang.github.io/0428/danxun.png") center no-repeat;  }
+ background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -51px -164px;
+    width: 16px;
+    height: 16px;  }
 
 .jp-shuffle {
-background: url("https://zexiliang.github.io/0428/suiji.png") center no-repeat;
-margin-left: 5px; }
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -24px -166px;
+    width: 17px;
+    height: 14px;
+    margin-left: 10px;
+ }
 
 .jp-shuffle:focus {
-background: url("https://zexiliang.github.io/0428/suiji.png") center no-repeat; }
-
+    background: url(https://zexiliang.github.io/jplayer-1/dist/image/sucai1.png) no-repeat -24px -166px;
+    width: 17px;
+    height: 14px;
+}
+/*
 .jp-state-shuffled .jp-shuffle {
 background: url("https://zexiliang.github.io/0428/suiji.png") center no-repeat; }
 
 .jp-state-shuffled .jp-shuffle:focus {
 background: url("https://zexiliang.github.io/0428/suiji.png") center no-repeat; }
-
+*/
 /* @end */
 /* @group NO SOLUTION error feedback */
 .jp-no-solution {
