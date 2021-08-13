@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<!-- Website Design By: www.happyworm.com -->
+<title>20210211</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<!-- 1个样式文件 -->
+<link  rel="stylesheet" type="text/css" href="https://zexiliang.github.io/Music/contr.css"/>
+	<!-- 4个js文件 -->
+	<script src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://zexiliang.github.io/Music/jquery.min.js"></script>
+<script type="text/javascript" src="https://zexiliang.github.io/0428/jquery.jplayer.js"></script>
+<script type="text/javascript" src="https://zexiliang.github.io/0428/jplayer.playlist.js"></script>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+
+	new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1",
+		cssSelectorAncestor: "#jp_container_1"
+	}, [
+		{
+			title:"Such a Whore (Original Mix)",
+			artist:"",
+			mp3:"http://m801.music.126.net/20210812215441/761d49a44cae0ebfc64980a596d7ef10/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/5512623159/9051/4b44/b245/c814685d3b0a560894a700641f3c7165.mp3",
+			poster: ""
+
+		},{
+			title:" Pháo-Phút Hơn(MOYU Remix) ",
+			artist:"",
+			mp3:"http://music.163.com/song/media/outer/url?id=1807939070.mp3",
+			poster: ""
+
+		},{
+			title:"Apex",
+			artist:"",
+			mp3:"http://music.163.com/song/media/outer/url?id=1333144056.mp3",
+			poster: ""
+
+		},{
+			title:"Funk You (Remake)",
+			artist:"",
+			mp3:"http://music.163.com/song/media/outer/url?id=1822819015.mp3",
+			poster: ""
+
+		}
+		/*
+			{title:"爱是电饭锅电饭锅电饭锅",
+			artist:"Pixar",
+			m4v: "http://www.jplayer.org/video/m4v/Incredibles_Teaser.m4v",
+			ogv: "http://www.jplayer.org/video/ogv/Incredibles_Teaser.ogv",
+			webmv: "http://www.jplayer.org/video/webm/Incredibles_Teaser.webm",
+			poster: "http://www.jplayer.org/video/poster/Incredibles_Teaser_640x272.png"
+		}*/
+	], {
+		swfPath: "",
+		supplied: " ogv, m4v, oga, mp3",
+		useStateClassSkin: true,
+		autoBlur: false,
+		smoothPlayBar: true,
+		keyEnabled: true,
+		audioFullScreen: true
+	});
+});
+//]]>
+</script>
+<style>
+body, dl, dt, dd, ul, ol, li,  h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,button,i,svg,path {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background:transparent;
+}
+ol, ul, li {
+	outline: none;
+    list-style: none;
+    font-family: "Microsoft YaHei";
+        font-size: 12px;
+    font-weight: 400;
+}
+
+li {
+    display: list-item;
+    
+}
+#roll_T #roll_1 ul li {
+	font-family: "apercu",sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	color: #fff;
+	text-rendering: optimizeLegibility;
+
+}
+.jp-playlist {
+	display: none;
+}
+body {
+
+	background:#222;
+	color: #2f54eb;
+
+
+}
+
+div.jp-type-playlist div.jp-playlist a {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+}
+.jp-playlist li {
+    list-style-type: none;
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
+    padding: 2px 0;
+    color: #fff;
+    cursor: pointer;
+}
+.jp-type-playlist{background: #222}
+.jp-playlist,.jp-gui {
+	z-index: 10;
+}
+</style>
+<style>
+	section.light {
+		background: #eee;
+	}
+	@supports (mix-blend-mode: lighten) {
+		section.light .gradient1 {
+			display: inline-block;
+			position: relative;
+			color: #000;
+			background: #fff;
+			mix-blend-mode: multiply;
+		}
+		section.light .gradient1::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(to right,#23966c, #faaa54, #e23b4a, #db0768, #360670);
+			pointer-events: none;
+		}
+		section.light .gradient1::before {
+			mix-blend-mode: screen;
+		}
+	}
+	@supports (mix-blend-mode: lighten) {
+		section.light .gradient2 {
+			display: inline-block;
+			position: relative;
+			color: #000;
+			background: #fff;
+			mix-blend-mode: multiply;
+		}
+		section.light .gradient2::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: radial-gradient(circle, #23966c, #faaa54, #e23b4a, #db0768, #360670);
+			pointer-events: none;
+		}
+		section.light .gradient2::before {
+			mix-blend-mode: screen;
+		}
+	}
+
+	section.dark {
+		display: block;
+		z-index: 1;
+		background: #222;
+	}
+	section.dark .gradient1 {
+		color: #fff;
+	}
+	@supports (mix-blend-mode: lighten) {
+		section.dark .gradient1 {
+			display: inline-block;
+			position: relative;
+			color: #fff;
+			background: #000;
+			mix-blend-mode: lighten;
+
+		}
+		section.dark .gradient1::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(to right,#23966c, #faaa54, #e23b4a, #db0768, #360670);
+			pointer-events: none;
+		}
+		section.dark .gradient1::before {
+			mix-blend-mode: multiply;
+		}
+	}
+	section.dark .gradient2 {
+		color: #fff;
+	}
+	@supports (mix-blend-mode: lighten) {
+		section.dark .gradient2 {
+			display: inline-block;
+			position: relative;
+			color: #fff;
+			background: #000;
+			mix-blend-mode: lighten;
+		}
+		section.dark .gradient2::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: radial-gradient(circle, #23966c, #faaa54, #e23b4a, #db0768, #360670);
+			pointer-events: none;
+		}
+		section.dark .gradient2::before {
+			mix-blend-mode: multiply;
+		}
+	}
+
+	/* Page styling, ignore */
+	body {
+		margin: 0;
+		font-family: "Lato", sans-serif;
+		text-align: center;
+	}
+
+	section {
+		min-height: 50vh;
+		padding: 2em;
+	}
+
+	.gradient1 {
+		font-size: 96px;
+		margin: 0.5em;
+		opacity: 0.9;
+		cursor:pointer;
+	}
+
+	.gradient2 {
+		text-align: center;
+		margin: 1em auto;
+		width: 10em;
+	}
+</style>
+</head>
+
+<body>
+<div id="jp_container_1" class="jp-video jp-video-270p" role="application" aria-label="media player">
+	<div class="jp-type-playlist">
+		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+		<div class="jp-playlist" id="lb">
+		<div class="bj">
+			<ul>
+				<!--  在此祝大家在新的一年里顺风顺水顺财神 天翔紫燕 地暖春风天高地阔 人寿年丰 天开淑景 The method Playlist.displayPlaylist() uses this unordered list -->
+				<li>&nbsp;</li>
+			</ul>&nbsp;&nbsp;&nbsp;--------------------------------------------------</div>
+		</div>
+
+	<!-- --------------------------------------  -->
+  <div id="roll_T" onmouseover="ir=window.clearInterval();" onmouseout="ir=setInterval('',1000);">
+	<div id="roll_1">
+		<ul id="T">
+			<li class="fl lists mr10 fir"> 歌曲为纯音乐,请欣赏。仅为测试,不提供下载 </li>
+		</ul>
+     </div>
+     </div>
+
+
+		<!-- ----------------------------------- -->
+		<div class="jp-gui">
+			<div class="jp-video-play">
+				<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+			</div>
+			<div class="jp-interface">
+				<div class="jp-progress">
+					<div class="jp-seek-bar">
+						<div class="jp-play-bar"></div>
+					</div>
+				</div>
+				<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+				<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+				<div class="jp-controls-holder">
+					<div class="jp-controls">
+						<button class="jp-previous" role="button" tabindex="0">上一首</button>
+						<button class="jp-play" role="button" tabindex="0">play</button>
+						<button class="jp-stop" role="button" tabindex="0">stop</button>
+						<button class="jp-next" role="button" tabindex="0">下一首</button>
+						
+					<div class="jp-toggles">
+							<div class="list"></div>
+						<button class="jp-repeat" role="button" tabindex="0">q</button>
+						<button class="jp-shuffle" role="button" tabindex="0">q</button>
+						
+					</div>
+					</div>
+					<div class="jp-volume-controls">
+						
+						<div class="jp-volume-bar">
+							<div class="jp-volume-bar-value"></div>
+						</div>
+						<button class="jp-mute" role="button" tabindex="0">mute</button>
+						
+					</div>
+				
+				</div>
+				<div class="jp-details">
+					<div class="jp-title" aria-label="title">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+		<div class="jp-no-solution">
+			<span>Update Required</span>
+			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		</div>
+	</div>
+</div>
+
+<div>
+
+
+	<section class="dark">
+		<h1 class="gradient1">http ywyxyhw</h1>
+
+		<!-- <p class="gradient2">月舞精灵</p>-->
+	</section>
+
+
+</body>
+<script type="text/javascript">
+
+
+</script>
+<script type="text/javascript">
+$(function(){
+  
+$(".list").click(function(){
+
+		$(".jp-playlist").fadeToggle("3000");
+	
+	});
+
+
+
+});
+       
+
+  window.onload = function(){
+            
+var myDate = new Date();
+ console.log(myDate.getMilliseconds());
+   /*  var aa ="当前曲目:" + $(".jp-playlist-current div a").eq(2).html(); 
+            console.log("11",aa);
+            
+            $(function(){ 
+            $(".jp-playlist-item").click(function(){
+               
+                var self = $(this).text();
+               console.log("1",self);
+             var dizhi ="当前曲目:"+ self;
+         $(".fir a").html(dizhi);
+        })
+
+        });*/
+
+            	var speed = 25
+			var s = document.getElementById("roll_T")
+			var i = document.getElementById("roll_1")
+			var t = document.getElementById("T")
+			i.appendChild(t.cloneNode(true))
+			function scroll()
+			{
+				 s.scrollLeft += 1
+				 if(s.scrollLeft >= t.offsetWidth) s.scrollLeft = 0;
+			}
+			window.setInterval(scroll,speed)
+     
+        }
+
+
+
+
+ 
+
+
+
+
+
+</script>
+</html>
