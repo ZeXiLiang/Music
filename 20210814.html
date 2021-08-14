@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        *,
+        :before,
+        :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        html,
+        body {
+            min-height: 100%;
+        }
+        body {
+            font-family: 'Oswald', sans-serif;
+        }
+        /*-----------------------文章------------------------*/
+        .header-post {
+            position: relative;
+            padding-bottom: 50px;
+        }
+        .header-post {
+            padding: 45px 0 40px 0;
+
+        }
+        .horizontal-center {
+            text-align: center;
+        }
+        .inner {
+            position: relative;
+            width: 1905px;
+            max-width: 100%;
+            margin: 0 auto;
+            padding-left: 66px;
+            padding-right: 66px;
+            clear: both;
+        }
+        .inner:not(.full-width) {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+
+        .inner.width-4 {
+            width: 1081px;
+        }
+        .header-post .row {
+            margin-bottom: 15px;
+        }
+        .header-post .row h1 {
+            width: 700px;
+            max-width: 100%;
+            margin: 0 auto;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 115%;
+        }
+        .header-post .info {
+            text-transform: uppercase;
+            font-size: 13px;
+            line-height: 170%;
+        }
+        .header-post .info strong {
+            font-weight: 600;
+        }
+        .entry {
+            font-size: 20px;
+            line-height: 35px;
+        }
+        .entry h3 {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-family: 'Trocchi', serif;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 150%;
+        }
+        .entry p {
+            line-height: 1.7em;
+        }
+        p, blockquote, .p {
+            margin-bottom: 25px;
+            line-height: 170%;
+        }
+
+
+
+        /*------------------------------------------------------*/
+        .wrapper {
+            text-align: center;
+        }
+        /* Clip text element */
+        .clip-text {
+            width: 1200px;
+            height: 600px;
+            font-size: 6em;
+            font-weight: bold;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+            padding-top: 2.5em;
+            text-align: center;
+            /* Color fallback */
+            color: #fff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .clip-text:before,
+        .clip-text:after {
+            position: absolute;
+            content: '';
+        }
+        /* Background z-index=-2 */
+        .clip-text:before {
+            z-index: -2;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+           /* background-image: inherit;*//*背景图隐藏或显示*/
+            background-color: inherit;
+
+
+        }
+
+        /* Text Background (black zone) z-index=-1  阴影的宽高 */
+        .clip-text:after {
+            width: 1200px;
+            height: 180px;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            /*       top: .125em;
+                   right: .125em;
+                   bottom: .125em;
+                   left: .125em;*/
+            margin: auto;
+            /*前景色*/
+            background: #000;
+            opacity: .4;
+
+            /*opacity 透明度0-1 调节*/
+        }
+        /*作品的宽高*/
+        .clip-text_one {
+
+            width: 1200px;
+            height: 600px;
+            user-select: none;
+            cursor: default;
+            background-color: #f60;
+         /*   background-image: url(02.jpg?random);*/
+/*图文可以用这里设置background-image设置外链地址 也需在57行设置一样的background-image*/
+        }
+        .wy {
+            position:absolute;
+            top: 400px;
+            right: 200px;
+            z-index: 10;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-post horizontal-center">
+    <div class="inner width-4">
+        <div class="row">
+            <h1 class="heading-large" itemprop="headline name">自定义水印图</h1>
+        </div>
+        <div class="row info">文章作者
+            <strong><span itemprop="name author">月舞精灵 </span></a></strong>
+            在
+            <strong><span itemprop="about">月舞芸袖音画网</span></a></strong>
+            - <span>8 月 14 日 </span>
+
+
+        </div>
+
+    </div>
+    </div>
+        <div class="wrapper">
+            <div class="clip-text clip-text_one">ywyxyhw</div>
+        </div>
+        <iframe class="wy" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1809661590&auto=0&height=66"></iframe>
+
+
+
+<div class="entry entry-blog">
+    <div class="inner width-5 " >
+        <h3><strong>水印</strong>可以修改的地方<strong>图片外链地址</strong>、<strong>自定文字</strong>、<strong>自定阴影颜色、透明度、宽高</strong>  </h3>
+
+
+        <h3><p> <b>图片外链地址</b>.clip-text_one =>background-image: url(02.jpg); </p>
+
+
+            <p><b>自定文字 </b>Ctrl+f 找 ywyxyhw    </p>
+
+
+            <p><b>自定阴影颜色、透明度、宽高</b>  .clip-text:after=>其中都是。 注意全部的宽高默认 1200 900。 全部改，自己图片尺寸多少，自己调。</p>
+
+            <p>我找了单图试了试效果 有点漂亮 没上音画图怕侵权就单一颜色做背景了  </p>
+        </h3>
+    </div>
+</div>
+
+
+</body>
+</html>
