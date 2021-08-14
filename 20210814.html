@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        *,
+        :before,
+        :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        html,
+        body {
+            min-height: 100%;
+        }
+        body {
+            font-family: 'Oswald', sans-serif;
+        }
+        .wrapper {
+            text-align: center;
+        }
+        /* Clip text element */
+        .clip-text {
+            width: 1200px;
+            height: 600px;
+            font-size: 6em;
+            font-weight: bold;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+            padding-top: 2.5em;
+            text-align: center;
+            /* Color fallback */
+            color: #fff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .clip-text:before,
+        .clip-text:after {
+            position: absolute;
+            content: '';
+        }
+        /* Background z-index=-2 */
+        .clip-text:before {
+            z-index: -2;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+           /* background-image: inherit;*//*背景图隐藏或显示*/
+            background-color: inherit;
+
+
+        }
+
+        /* Text Background (black zone) z-index=-1  阴影的宽高 */
+        .clip-text:after {
+            width: 1200px;
+            height: 180px;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            /*       top: .125em;
+                   right: .125em;
+                   bottom: .125em;
+                   left: .125em;*/
+            margin: auto;
+            /*前景色*/
+            background: #000;
+            opacity: .4;
+
+            /*opacity 透明度0-1 调节*/
+        }
+        /*作品的宽高*/
+        .clip-text_one {
+
+            width: 1200px;
+            height: 600px;
+            user-select: none;
+            cursor: default;
+            background-color: #f60;
+         /*   background-image: url(02.jpg?random);*/
+/*图文可以用这里设置background-image设置外链地址 也需在57行设置一样的background-image*/
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="clip-text clip-text_one">ywyxyhw</div>
+</div>
+</body>
+</html>
